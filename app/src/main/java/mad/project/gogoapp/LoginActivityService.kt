@@ -1,6 +1,7 @@
 package mad.project.gogoapp
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -60,9 +61,9 @@ class LoginActivityService : AppCompatActivity() {
                 dialog.dismiss()
             }
             if (dialog.window != null){
-                val signupIntent = Intent(this,SignupActivityService::class.java)
-                startActivity(signupIntent)
+                dialog.window!!.setBackgroundDrawable(ColorDrawable(0))
             }
+            dialog.show()
         }
 
         binding.signupRedirectText.setOnClickListener{
