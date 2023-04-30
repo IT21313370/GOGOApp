@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:title="Wallet"
+        android:id="@+id/wallet"
+        android:icon="@drawable/baseline_wallet_24"/>
+    <item android:title="Notification"
+        android:id="@+id/notification"
+        android:icon="@drawable/baseline_message_24"/>
+    <item android:title="Todo"
+        android:id="@+id/todo"
+        android:icon="@drawable/baseline_event_note_24"/>
+    <item android:title="Profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/baseline_person_24"/>
+
+</menu>
