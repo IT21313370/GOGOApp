@@ -4,13 +4,13 @@
     <item android:title="Community"
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"/>
-    <item android:title="Wallet"
+    <item android:title="Todo"
         android:id="@+id/wallet"
         android:icon="@drawable/baseline_wallet_24"/>
     <item android:title="Notification"
         android:id="@+id/notification"
         android:icon="@drawable/baseline_message_24"/>
-    <item android:title="Todo"
+    <item android:title="Favourites"
         android:id="@+id/todo"
         android:icon="@drawable/baseline_event_note_24"/>
     <item android:title="Profile"
