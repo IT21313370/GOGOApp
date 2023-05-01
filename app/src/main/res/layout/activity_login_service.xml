@@ -95,7 +95,7 @@
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="8dp"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textColor="@color/vividBlue"/>
 
 
