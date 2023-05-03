@@ -22,11 +22,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.community -> replaceFragment(Community())
                 R.id.notification -> replaceFragment(Notification())
                 R.id.favourites -> replaceFragment(Favourites())
-                R.id.todo -> {
-                    val changePage = Intent(this, todo_main::class.java)
-                    startActivity(changePage)
-                    true
-                }
+                R.id.todo -> replaceFragment(Todo())
                 R.id.addbox -> replaceFragment(AddBox())
 
                 else -> {

@@ -12,5 +12,4 @@
         android:text="Todo Fragment"
         android:textSize="26dp"
         android:layout_gravity="center"/>
-
 </FrameLayout>
