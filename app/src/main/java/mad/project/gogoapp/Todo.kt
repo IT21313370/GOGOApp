@@ -1,23 +1,37 @@
 package mad.project.gogoapp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
+class Todo {
 
-class todo_main : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_todo_main)
-        val add = findViewById(R.id.todo_insert_btn) as Button
-        val list = findViewById(R.id.todo_list_btn) as Button
+    var id: String? = null
+    var title: String? = null
+    var time: String? = null
+    var date: String? = null
+    var location: String? = null
+    var payment = 0.0
 
-        add.setOnClickListener {
-            startActivity(Intent(this, add_todo::class.java))
-        }
+    constructor() {}
+    constructor(title: String?, time: String?, date: String?, location: String?, payment: Double) {
+        this.title = title
+        this.time = time
+        this.date = date
+        this.location = location
+        this.payment = payment
+    }
 
-        list.setOnClickListener {
-            startActivity(Intent(this, List_todo::class.java))
-        }
+    constructor(
+        id: String?,
+        title: String?,
+        time: String?,
+        date: String?,
+        location: String?,
+        payment: Double
+    ) {
+        this.id = id
+        this.title = title
+        this.time = time
+        this.date = date
+        this.location = location
+        this.payment = payment
     }
 }
+
