@@ -24,21 +24,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.todo -> replaceFragment(Todo())
                 R.id.addbox -> replaceFragment(AddBox())
 
-
                 else -> {
 
                 }
-
             }
             true
         }
-
-
-
-
-
-
-
     }
 
     private fun replaceFragment(fragment : Fragment){
@@ -50,7 +41,4 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-
-
 }
