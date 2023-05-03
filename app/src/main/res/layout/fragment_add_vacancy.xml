@@ -7,15 +7,16 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:padding="5dp"
         android:text="My Vacancy List"
-        android:layout_gravity="center_horizontal"
-        android:textSize="24sp"
-        android:textStyle="normal"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:layout_marginTop="50dp"
         android:textAlignment="center"
-        android:background="@color/blueGray"
+
         android:textColor="@color/grey"/>
 
 
