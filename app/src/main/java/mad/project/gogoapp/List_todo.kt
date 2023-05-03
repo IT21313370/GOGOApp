@@ -85,16 +85,3 @@ class List_todo : AppCompatActivity() {
 
     }
 
-    private  fun filter(e: String) {
-
-        val filteredItem = ArrayList<Todo>()
-
-        for (item in todoArray) {
-            if (item.location!!.toLowerCase().contains(e.toLowerCase())||item.title!!.toLowerCase().contains(e.toLowerCase())) {
-                filteredItem.add(item)
-            }
-        }
-
-        todoRecyclerview.adapter = todoAdapter(filteredItem)
-    }
-}
