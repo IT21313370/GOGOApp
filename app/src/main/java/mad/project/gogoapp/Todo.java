@@ -1,6 +1,6 @@
 package mad.project.gogoapp;
 
-public class TodoJ {
+public class Todo {
 
     private String id;
     private String title;
@@ -9,11 +9,11 @@ public class TodoJ {
     private String location;
     private double payment;
 
-    public TodoJ(){
+    public Todo(){
 
     }
 
-    public TodoJ(String title,String time,String date, String location,Double payment) {
+    public Todo(String title, String time, String date, String location, Double payment) {
         this.title=title;
         this.time=time;
         this.date=date;
@@ -21,7 +21,7 @@ public class TodoJ {
         this.payment=payment;
     }
 
-    public TodoJ(String id,String title,String time,String date, String location,Double payment) {
+    public Todo(String id, String title, String time, String date, String location, Double payment) {
         this.id=id;
         this.title=title;
         this.time=time;
