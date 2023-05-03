@@ -1,4 +1,4 @@
-package com.sliit.todolist
+package mad.project.todolist
 
 import android.os.Bundle
 import android.text.Editable
