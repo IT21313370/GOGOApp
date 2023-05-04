@@ -4,10 +4,7 @@ Second year mobile application development (MAD) group project of Sri Lanka inst
 Task List with Search
 
 
-User
-Give a discription about to do list crud operation and there is a search to search by task name and location. And the payments are calculated and shown in the top of the page.  Give me a description.
 
-ChatGPT
 A to-do list with CRUD operations allows users to create, read, update, and delete tasks. Users can add tasks with a name and location, along with any relevant details or due dates. They can also view their tasks, edit them, mark them as complete, or delete them altogether.
 
 To make it easier for users to find specific tasks, the to-do list also includes a search functionality. This search feature allows users to search for tasks by name or location. Users can simply type in a keyword or phrase, and the search feature will return any matching results.
