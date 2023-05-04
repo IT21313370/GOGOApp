@@ -12,19 +12,19 @@
         android:theme="@style/Theme.GoGoApp"
         tools:targetApi="31">
         <activity
-            android:name=".list"
+            android:name=".ViewJobActivity"
             android:exported="false" />
         <activity
-            android:name=".List_todo"
+            android:name=".DeleteVacancyActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_list_todo"
+            android:name=".UpdateVacancyActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity_list"
+            android:name=".DeleteJobActivity"
             android:exported="false" />
         <activity
-            android:name=".AddTodoActivity"
+            android:name=".JobUpdateActivity"
             android:exported="false" />
         <activity
             android:name=".AddNewVacancyActivity"

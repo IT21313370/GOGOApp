@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNewJobActivity">
+    tools:context=".JobUpdateActivity">
 
 
     <ScrollView
@@ -24,9 +24,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/addJobTitle"
+                android:id="@+id/referenceJobTitle"
                 android:background="@drawable/vividblue_border"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="20dp"
                 android:hint="Job Title"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
@@ -37,10 +37,10 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/addJobFName"
+                android:id="@+id/updateFName"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
-                android:hint="First name"
+                android:hint="First Name"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="start|center_vertical"
@@ -50,7 +50,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/addJobLName"
+                android:id="@+id/updateLName"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
                 android:hint="Last Name"
@@ -63,7 +63,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/addJobFee"
+                android:id="@+id/updateJobFee"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
                 android:hint="Charges"
@@ -76,7 +76,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/addJobActiveHrs"
+                android:id="@+id/updateActiveHrs"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
                 android:hint="Active Hours"
@@ -86,10 +86,13 @@
                 android:padding="16dp"
                 android:textColor="@color/vividBlue"/>
 
+
+
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/addJobLocation"
+                android:id="@+id/updateJobLocation"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
                 android:hint="Location"
@@ -99,10 +102,11 @@
                 android:padding="16dp"
                 android:textColor="@color/vividBlue"/>
 
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:id="@+id/addJobExperience"
+                android:id="@+id/updateJobExperience"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
                 android:hint="Experience"
@@ -115,7 +119,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:id="@+id/addJobDescription"
+                android:id="@+id/updateJobDescription"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
                 android:hint="Description"
@@ -125,12 +129,11 @@
                 android:padding="16dp"
                 android:textColor="@color/vividBlue"/>
 
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/saveButton"
-                android:text="save"
+                android:id="@+id/updateButton"
+                android:text="Update"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="10dp"
@@ -140,14 +143,17 @@
 
 
 
+
+
+
         </LinearLayout>
 
 
 
+
+
+
     </ScrollView>
-
-
-
 
 
 </ScrollView>
