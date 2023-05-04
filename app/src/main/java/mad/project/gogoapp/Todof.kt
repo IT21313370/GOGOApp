@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 
 
-class Todo : Fragment() {
+class Todof : Fragment() {
 
 
     override fun onCreateView(
@@ -19,6 +19,7 @@ class Todo : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_todo, container, false)
         val button = view.findViewById<Button>(R.id.todo_insert_button)
+        val button2 = view.findViewById<Button>(R.id.todo_list_button)
         button.setOnClickListener{
             val intent = Intent(activity, AddTodoActivity::class.java)
             startActivity(intent)

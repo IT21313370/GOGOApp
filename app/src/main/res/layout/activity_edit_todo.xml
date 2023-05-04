@@ -8,14 +8,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".add_todo">
+        tools:context=".edit_todo">
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
-            android:text="Add Todo"
+            android:text="Edit Todo"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -49,7 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/editSpinner"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -62,11 +62,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addDatePicker"
+            app:layout_constraintTop_toBottomOf="@+id/editDatePicker"
             tools:ignore="MissingConstraints" />
 
         <TimePicker
-            android:id="@+id/addTimePicker"
+            android:id="@+id/editTimePicker"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -87,7 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editTitle"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -100,11 +100,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addTimePicker"
+            app:layout_constraintTop_toBottomOf="@+id/editTimePicker"
             tools:ignore="MissingConstraints" />
 
         <DatePicker
-            android:id="@+id/addDatePicker"
+            android:id="@+id/editDatePicker"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -116,7 +116,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <Spinner
-            android:id="@+id/addSpinner"
+            android:id="@+id/editSpinner"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
@@ -126,7 +126,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
-            android:id="@+id/addPayment"
+            android:id="@+id/editPayment"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
@@ -138,18 +138,18 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
-            android:id="@+id/addBtn"
+            android:id="@+id/editBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Insert"
+            android:text="Edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addPayment"
+            app:layout_constraintTop_toBottomOf="@+id/editPayment"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/addTitle"
+            android:id="@+id/editTitle"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"

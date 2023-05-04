@@ -1,6 +1,5 @@
 package mad.project.gogoapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.community -> replaceFragment(Community())
                 R.id.notification -> replaceFragment(Notification())
                 R.id.favourites -> replaceFragment(Favourites())
-                R.id.todo -> replaceFragment(Todo())
+                R.id.todo -> replaceFragment(Todof())
                 R.id.addbox -> replaceFragment(AddBox())
 
                 else -> {
