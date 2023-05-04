@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 
 
+
 class Todo : Fragment() {
 
 
@@ -25,10 +26,10 @@ class Todo : Fragment() {
             val intent = Intent(activity, add_todo::class.java)
             startActivity(intent)
         }
-//        button.setOnClickListener{
-//            val intent = Intent(activity, AddTodoActivity::class.java)
-//            startActivity(intent)
-//        }
+        button2.setOnClickListener{
+            val intent = Intent(activity, List_todo::class.java)
+            startActivity(intent)
+        }
         return view
         }
 }

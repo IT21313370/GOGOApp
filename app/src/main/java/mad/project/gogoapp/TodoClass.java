@@ -21,7 +21,7 @@ public class TodoClass {
         this.payment=payment;
     }
 
-    public TodoClass (String id,String title,String time,String date, String location,Double payment) {
+    public TodoClass(String id,String title,String time,String date, String location,Double payment) {
         this.id=id;
         this.title=title;
         this.time=time;
