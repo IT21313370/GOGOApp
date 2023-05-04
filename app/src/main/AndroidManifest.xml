@@ -12,6 +12,19 @@
         android:theme="@style/Theme.GoGoApp"
         tools:targetApi="31">
         <activity
+            android:name=".ViewJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteVacancyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateVacancyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobUpdateActivity"
             android:exported="false" />
         <activity
             android:name=".AddNewVacancyActivity"

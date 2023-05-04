@@ -48,4 +48,15 @@
         android:layout_marginBottom="140dp"
         android:layout_gravity="bottom|end" />
 
+
+    <Button
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:id="@+id/viewJob"
+        android:background="@drawable/baseline_preview_24"
+        android:padding="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="200dp"
+        android:layout_gravity="bottom|end" />
+
 </FrameLayout>
