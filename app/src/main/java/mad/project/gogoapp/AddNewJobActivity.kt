@@ -21,8 +21,8 @@ class AddNewJobActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener {
             val jobTitle = binding.addJobTitle.text.toString()
-            val fName = binding.addJobFName.text.toString()
-            val lName = binding.addJobLName.text.toString()
+            val fname = binding.addJobFName.text.toString()
+            val lname = binding.addJobLName.text.toString()
             val fee = binding.addJobFee.text.toString()
             val activeHrs = binding.addJobActiveHrs.text.toString()
             val myLocation = binding.addJobLocation.text.toString()
@@ -32,10 +32,10 @@ class AddNewJobActivity : AppCompatActivity() {
 
             databaseReference = FirebaseDatabase.getInstance().getReference("Job List")
 
-            val key = databaseReference.push().key //generate a unique key
-            if (key != null ) {
-                val jobs = NewJobData(jobTitle, fName, lName, fee, activeHrs, myLocation, experience, description)
-                databaseReference.child(key).setValue(jobs).addOnSuccessListener {
+//            val key = databaseReference.push().key //generate a unique key
+
+                val jobs = NewJobData(jobTitle, fname, lname, fee, activeHrs, myLocation, experience, description)
+                databaseReference.child(jobTitle).setValue(jobs).addOnSuccessListener {
                     binding.addJobTitle.text.clear()
                     binding.addJobFName.text.clear()
                     binding.addJobLName.text.clear()
@@ -53,7 +53,7 @@ class AddNewJobActivity : AppCompatActivity() {
                 }.addOnFailureListener{
                     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
                 }
-            }
+
         }
 
     }
