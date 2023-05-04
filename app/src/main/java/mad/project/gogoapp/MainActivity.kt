@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.community -> replaceFragment(Community())
                 R.id.notification -> replaceFragment(Notification())
                 R.id.favourites -> replaceFragment(Favourites())
-                R.id.todo -> replaceFragment(Todof())
+                R.id.todo -> replaceFragment(Todo())
                 R.id.addbox -> replaceFragment(AddBox())
 
                 else -> {
