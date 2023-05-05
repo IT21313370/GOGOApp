@@ -5,11 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".Vacancies">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vacancies Fragment"
-        android:textSize="26dp"
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/vacancyLstBtn"
+        android:layout_marginTop="670dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:padding="16dp"
+        android:layout_below="@+id/seekerListImg"
+        android:layout_alignParentBottom="true"
+        android:text="View Vacncies List Here"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/vacancyListImg"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/baseline_whatshot_24"
         android:layout_gravity="center"/>
 
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import mad.project.gogoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,13 +18,14 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(Community())
 
 
+
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.community -> replaceFragment(Community())
                 R.id.notification -> replaceFragment(Notification())
-                R.id.favourites -> replaceFragment(Favourites())
+                R.id.favorites -> replaceFragment(Favourites())
                 R.id.todo -> replaceFragment(Todo())
-                R.id.addbox -> replaceFragment(AddBox())
+                R.id.addBox -> replaceFragment(AddBox())
 
                 else -> {
 
