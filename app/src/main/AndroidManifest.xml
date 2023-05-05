@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoGoApp"
         tools:targetApi="31">
+
         <activity
             android:name=".edit_todo"
             android:exported="false" />

@@ -16,7 +16,7 @@ class StartingActivity : AppCompatActivity() {
         handler = Handler()
 
         handler.postDelayed({
-            val intent = Intent(this,SignupActivityService::class.java)
+            val intent = Intent(this,LoginActivityService::class.java)
             startActivity(intent)
             finish()
         }, 3000)
