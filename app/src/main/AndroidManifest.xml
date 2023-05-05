@@ -12,7 +12,7 @@
         android:theme="@style/Theme.GoGoApp"
         tools:targetApi="31">
         <activity
-            android:name=".AddNewJobActivity02"
+            android:name=".AddNewJobListActivity"
             android:exported="false" />
         <activity
             android:name=".ViewJobActivity"

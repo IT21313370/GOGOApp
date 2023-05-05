@@ -6,11 +6,10 @@ import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import mad.project.gogoapp.databinding.ActivityAddNewJobBinding
 
-class AddNewJobActivity02 : AppCompatActivity() {
+class AddNewJobListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddNewJobBinding
-    private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var progressDialog: ProgressDialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
