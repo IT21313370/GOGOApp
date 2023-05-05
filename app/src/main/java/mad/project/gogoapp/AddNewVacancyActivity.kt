@@ -21,8 +21,6 @@ class AddNewVacancyActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener {
             val vacancyTitle = binding.addVacancyTitle.text.toString()
-            val fName = binding.addVacancyFName.text.toString()
-            val lName = binding.addVacancyLName.text.toString()
             val phoneNum = binding.addVacancyPhoneNum.text.toString()
             val myLocation = binding.addVacancyLocation.text.toString()
             val description = binding.addVacancyDescription.text.toString()
@@ -32,11 +30,9 @@ class AddNewVacancyActivity : AppCompatActivity() {
 
 //            val key = databaseReference.push().key //generate a unique key
 
-            val vacancy = NewVacancyData(vacancyTitle, fName, lName, phoneNum, myLocation, description)
+            val vacancy = NewVacancyData(vacancyTitle,  phoneNum, myLocation, description)
             databaseReference.child(vacancyTitle).setValue(vacancy).addOnSuccessListener {
                 binding.addVacancyTitle.text.clear()
-                binding.addVacancyFName.text.clear()
-                binding.addVacancyLName.text.clear()
                 binding.addVacancyPhoneNum.text.clear()
                 binding.addVacancyLocation.text.clear()
                 binding.addVacancyDescription.text.clear()

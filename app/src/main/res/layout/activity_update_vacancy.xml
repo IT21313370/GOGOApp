@@ -34,33 +34,6 @@
                 android:padding="16dp"
                 android:textColor="@color/vividBlue"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/updateFName"
-                android:background="@drawable/vividblue_border"
-                android:layout_marginTop="20dp"
-                android:hint="First Name"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="start|center_vertical"
-                android:padding="16dp"
-                android:textColor="@color/vividBlue"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/updateLName"
-                android:background="@drawable/vividblue_border"
-                android:layout_marginTop="20dp"
-                android:hint="Last Name"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="start|center_vertical"
-                android:padding="16dp"
-                android:textColor="@color/vividBlue"/>
-
-
 
             <EditText
                 android:layout_width="match_parent"
@@ -74,6 +47,8 @@
                 android:layout_gravity="start|center_vertical"
                 android:padding="16dp"
                 android:textColor="@color/vividBlue"/>
+
+
 
 
 
@@ -99,7 +74,7 @@
                 android:id="@+id/updateVacancyDescription"
                 android:background="@drawable/vividblue_border"
                 android:layout_marginTop="20dp"
-                android:hint="Description"
+                android:hint="Description/Employer"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="start|center_vertical"

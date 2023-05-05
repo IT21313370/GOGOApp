@@ -19,25 +19,21 @@ class UpdateVacancyActivity : AppCompatActivity() {
 
         binding.updateButton.setOnClickListener {
             val referenceVacancyTitle = binding.referenceVacancyTitle.text.toString()
-            val updateFName = binding.updateFName.text.toString()
-            val updateLName = binding.updateLName.text.toString()
             val updatePhoneNum = binding.updatePhoneNum.text.toString()
             val updateVacancyLocation= binding.updateVacancyLocation.text.toString()
             val updateVacancyDescription = binding.updateVacancyDescription.text.toString()
-            updateData(referenceVacancyTitle, updateFName, updateLName,  updatePhoneNum, updateVacancyLocation,
+            updateData(referenceVacancyTitle,  updatePhoneNum, updateVacancyLocation,
                 updateVacancyDescription)
         }
     }
 
-    private fun updateData(vacancyTitle: String, fName: String, lName:String, phoneNum: String, myLocation: String,
+    private fun updateData(vacancyTitle: String, phoneNum: String, myLocation: String,
                             description: String) {
         databaseReference = FirebaseDatabase.getInstance().getReference("Vacancy List")
-        val vacancy = mapOf<String, String>("fName" to fName, "lName" to lName , "phoneNum" to phoneNum, "myLocation" to myLocation,
+        val vacancy = mapOf<String, String>( "phoneNum" to phoneNum, "myLocation" to myLocation,
              "description" to description)
         databaseReference.child(vacancyTitle).updateChildren(vacancy).addOnSuccessListener {
             binding.referenceVacancyTitle.text.clear()
-            binding.updateFName.text.clear()
-            binding.updateLName.text.clear()
             binding.updatePhoneNum.text.clear()
             binding.updateVacancyLocation.text.clear()
             binding.updateVacancyDescription.text.clear()

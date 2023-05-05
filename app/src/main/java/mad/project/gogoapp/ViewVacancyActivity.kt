@@ -31,15 +31,13 @@ class ViewVacancyActivity : AppCompatActivity() {
             databaseReference = FirebaseDatabase.getInstance().getReference("Vacancy List")
             databaseReference.child(vacancyTitle).get().addOnSuccessListener {
                 if (it.exists()){
-                    val fName = it.child("fName").value
-                    val lName = it.child("lName").value
+                    val vacancyTitle = it.child("vacancyTitle").value
                     val phoneNum = it.child("phoneNum").value
                     val myLocation = it.child("myLocation").value
                     val description = it.child("description").value
                     Toast.makeText(this, "Results Found", Toast.LENGTH_SHORT).show()
                     binding.searchVacancy.text.clear()
-                    binding.readFName.text = fName.toString()
-                    binding.readLName.text = lName.toString()
+                    binding.readVacancy.text = vacancyTitle.toString()
                     binding.readPhoneNum.text = phoneNum.toString()
                     binding.readMyLocation.text = myLocation.toString()
                     binding.readDescription.text = description.toString()
@@ -58,15 +56,13 @@ class ViewVacancyActivity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference("Vacancy List")
         databaseReference.child(vacancyTitle).get().addOnSuccessListener {
             if (it.exists()){
-                val fName = it.child("fName").value
-                val lName = it.child("lName").value
+                val vacancyTitle = it.child("vacancyTitle").value
                 val phoneNum = it.child("phoneNum").value
                 val myLocation = it.child("myLocation").value
                 val description = it.child("description").value
                 Toast.makeText(this, "Results Found", Toast.LENGTH_SHORT).show()
                 binding.searchVacancy.text.clear()
-                binding.readFName.text = fName.toString()
-                binding.readLName.text = lName.toString()
+                binding.readVacancy.text = vacancyTitle.toString()
                 binding.readPhoneNum.text = phoneNum.toString()
                 binding.readMyLocation.text = myLocation.toString()
                 binding.readDescription.text = description.toString()
