@@ -24,6 +24,9 @@
             android:name=".add_todo"
             android:exported="false" />
         <activity
+            android:name=".ViewVacancyActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewJobActivity"
             android:exported="false" />
         <activity
