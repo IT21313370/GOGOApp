@@ -12,9 +12,6 @@
         android:theme="@style/Theme.GoGoApp"
         tools:targetApi="31">
         <activity
-            android:name=".ViewVacancyActivity"
-            android:exported="false" />
-        <activity
             android:name=".ViewJobActivity"
             android:exported="false" />
         <activity
