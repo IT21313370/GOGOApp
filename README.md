@@ -1,7 +1,7 @@
 # GOGOApp
 Second year mobile application development (MAD) group project of Sri Lanka institute of information technology (SLIIT)
 
-Task List with Search
+Task List - Search - payment calculation
 
 
 
