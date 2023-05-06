@@ -10,8 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.firebase.ui.database.FirebaseRecyclerAdapter
-import com.firebase.ui.database.FirebaseRecyclerOptions
+
 import com.google.firebase.database.FirebaseDatabase
 
 class todoAdapter(private val todoList: ArrayList<TodoClass>) : RecyclerView.Adapter<todoAdapter.viewholder>() {

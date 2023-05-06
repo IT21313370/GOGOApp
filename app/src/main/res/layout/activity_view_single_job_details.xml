@@ -23,16 +23,18 @@
             android:layout_centerVertical="true"/>
 
         <TextView
+            android:id="@+id/headerTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Job Details"
             android:layout_centerInParent="true"
+            android:text="Job Details"
             android:textColor="@color/vividBlue"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
-
+    </RelativeLayout>
 
         <ScrollView
+
             android:layout_width="match_parent"
             android:layout_marginTop="60dp"
             android:layout_height="wrap_content"
@@ -45,27 +47,17 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+
+                    android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-
-                    <RelativeLayout
-                        android:id="@+id/pdfRl"
-                        android:layout_width="110dp"
-                        android:layout_height="150dp"
-                        android:layout_marginEnd="5dp"
-                        android:background="@color/black">
-
-                        <!--view-->
-
-
-                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/titleTv"
-                        android:layout_toEndOf="@+id/pdfRl"
+                        android:layout_marginBottom="10dp"
                         style="@style/TextAppearance.MaterialComponents.Headline6"
                         android:text="Job Title"/>
 
@@ -78,8 +70,7 @@
                     <TableLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/titleTv"
-                        android:layout_toEndOf="@+id/pdfRl">
+                        android:layout_below="@+id/titleTv">
 
                         <TableRow>
 
@@ -97,12 +88,98 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 style="@style/TextAppearance.MaterialComponents.Caption"
-
+                                android:id="@+id/jobTv"
                                 android:text="N/A"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp"/>
+
+
+
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/nameLabelTv"
+                                android:text="Name"
                                 android:layout_marginEnd="5dp"/>
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/nameTv"
+                                android:text="N/A"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/locationLabelTv"
+                                android:text="Location"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/locationTv"
+                                android:text="N/A"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/actHLabelTv"
+                                android:text="Active Hours"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/actHTv"
+                                android:text="N/A"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/feeLabelTv"
+                                android:text="Charges"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearance.MaterialComponents.Caption"
+                                android:id="@+id/feeTv"
+                                android:text="N/A"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp"/>
+                        </TableRow>
 
 
+
+                        <TableRow>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -116,16 +193,10 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 style="@style/TextAppearance.MaterialComponents.Caption"
-                                android:id="@+id/jobTv"
+                                android:id="@+id/dateTv"
                                 android:text="N/A"
-                                android:layout_marginEnd="5dp"/>
-
-
-
-
-
-
-
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="10dp"/>
                         </TableRow>
 
 
@@ -136,6 +207,22 @@
 
 
                 </RelativeLayout>
+                
+                <TextView
+                    android:id="@+id/descriptionlabelTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="The description of the Job."
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/descriptionTv"
+                    android:text="N/A"
+
+                    android:layout_marginBottom="10dp"/>
+                
 
 
             </LinearLayout>
@@ -144,6 +231,6 @@
         </ScrollView>
 
 
-    </RelativeLayout>
+
 
 </RelativeLayout>

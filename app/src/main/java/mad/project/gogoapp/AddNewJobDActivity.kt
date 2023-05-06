@@ -7,6 +7,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import mad.project.gogoapp.databinding.ActivityAddNewJobDactivityBinding
+import java.text.DateFormat
+import java.util.*
+import kotlin.collections.HashMap
 
 class AddNewJobDActivity : AppCompatActivity() {
 
@@ -97,4 +100,6 @@ class AddNewJobDActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed to add due to ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+
 }

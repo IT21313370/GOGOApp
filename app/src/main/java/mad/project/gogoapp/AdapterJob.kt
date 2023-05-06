@@ -1,6 +1,7 @@
 package mad.project.gogoapp
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,6 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
-import com.orhanobut.dialogplus.Holder
 import mad.project.gogoapp.databinding.RowJobBinding
 
 class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.HolderJob>,
@@ -52,6 +52,14 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
         val job = model.job
         val uid = model.uid
         val timestamp = model.timestamp
+
+//        handle item click,open job details
+        holder.itemView.setOnClickListener{
+//            intent with job id
+            val intent = Intent(context,ViewSingleJobDetailsActivity::class.java)
+            intent.putExtra("id",id)
+            context.startActivity(intent)
+        }
 
         //set data
         holder.jobTv.text = job
