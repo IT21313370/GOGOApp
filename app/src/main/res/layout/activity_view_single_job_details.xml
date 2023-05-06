@@ -47,10 +47,11 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+
                     android:paddingHorizontal="40dp"
                     android:paddingVertical="40dp"
                     android:layout_gravity="center"
-                    android:paddingTop="10dp"
+                     android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -234,6 +235,61 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"/>
                 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/grey02"
+                    android:layout_marginTop="5dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/commetnText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Comments"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Comment>>"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="225dp"/>
+
+                    <ImageButton
+                        android:id="@+id/addCommentBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_comment_add_black"
+                        android:layout_alignParentEnd="true"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/commetnText"
+                        android:text="*If you want delete comment,\n\tHold and Delete"
+
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/commentsRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/addCommentBtn"
+                        android:layout_marginTop="38dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/row_comment" />
+
+
+                </RelativeLayout>
+
 
 
             </LinearLayout>
