@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="10dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/jobTv"
+            android:text="Job Title"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/feeTv"
+            android:text="5000"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationLabelTv"
+            android:text="Colombo"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textColor="@color/black"/>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
