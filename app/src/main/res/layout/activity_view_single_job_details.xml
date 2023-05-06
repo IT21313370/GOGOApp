@@ -242,7 +242,7 @@
                     <Button
                         android:layout_width="match_parent"
                         android:padding="16dp"
-                        android:id="@+id/reqBtn"
+                        android:id="@+id/showNotificationBtn"
                         android:text="Send Request"
                         android:layout_height="match_parent"/>
 
