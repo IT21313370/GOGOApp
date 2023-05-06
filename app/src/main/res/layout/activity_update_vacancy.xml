@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,14 +8,118 @@
     tools:context=".UpdateVacancyActivity">
 
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Update Vacancy Activity"
-        android:textSize="36sp"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="34dp"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="40dp"
+                android:padding="5dp"
+                android:text="Update Job Vacancy"
+                android:textAlignment="center"
+                android:textColor="@color/grey"
+                android:textSize="24sp"
+
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/referenceVacancyTitle"
+                android:background="@drawable/vividblue_border"
+                android:layout_marginTop="20dp"
+                android:hint="Job Vacancy Title"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/vividBlue"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/updatePhoneNum"
+                android:background="@drawable/vividblue_border"
+                android:layout_marginTop="20dp"
+                android:hint="Phone Number"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/vividBlue"/>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/updateVacancyLocation"
+                android:background="@drawable/vividblue_border"
+                android:layout_marginTop="20dp"
+                android:hint="Location"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/vividBlue"/>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/updateVacancyDescription"
+                android:background="@drawable/vividblue_border"
+                android:layout_marginTop="20dp"
+                android:hint="Description/Employer"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/vividBlue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/updateButton"
+                android:text="Update"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cornerRadius="20dp"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </ScrollView>
+
+
+</ScrollView>
