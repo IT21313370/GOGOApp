@@ -69,7 +69,7 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
             //confirm before deletion
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Delete")
-                .setMessage("Are you sure you want to delete this category?")
+                .setMessage("Are you sure you want to delete this job?")
                 .setPositiveButton("Confirm"){a, d->
                     Toast.makeText(context, "Deleting...", Toast.LENGTH_SHORT).show()
                     deleteJob(model, holder)
@@ -80,7 +80,29 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
                 .show()
         }
 
+        //set edit job function here
+        holder.editBtn.setOnClickListener {
+            //confirm before deletion
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Update Job Info")
+                .setMessage("Are you sure you want to edit this Job")
+                .setPositiveButton("Confirm"){a, d->
+                    Toast.makeText(context, "Redirect to update Page...", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(context, UpdateJobDActivity::class.java)
+                    context.startActivity(intent)
+                }
+                .setNegativeButton("Cancel"){a, d->
+                    a.dismiss()
+                }
+                .show()
+        }
+
     }
+
+    private fun editJob(model: ModelJob, holder: AdapterJob.HolderJob) {
+
+    }
+
 
     private fun deleteJob(model: ModelJob, holder: HolderJob) {
         //get id of category to delete
@@ -93,7 +115,7 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
                 Toast.makeText(context, "Deleted...", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener { e->
-                Toast.makeText(context, "Unable to dlete due to ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Unable to delete due to ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
 

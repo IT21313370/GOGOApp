@@ -27,7 +27,7 @@ class AddJob : Fragment() {
             startActivity(intent)
         }
         button01.setOnClickListener {
-            val intent = Intent(activity, JobUpdateActivity::class.java)
+            val intent = Intent(activity, UpdateJobDActivity::class.java)
             startActivity(intent)
         }
         button02.setOnClickListener {
