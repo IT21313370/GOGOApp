@@ -10,11 +10,11 @@
     <item android:title="Notification"
         android:id="@+id/notification"
         android:icon="@drawable/baseline_message_24"/>
-    <item android:title="Favourites"
-        android:id="@+id/favourites"
+    <item android:title="Favorites"
+        android:id="@+id/favorites"
         android:icon="@drawable/baseline_favorite_24"/>
     <item android:title="Add Box"
-        android:id="@+id/addbox"
+        android:id="@+id/addBox"
         android:icon="@drawable/baseline_add_box_24"/>
 
 </menu>

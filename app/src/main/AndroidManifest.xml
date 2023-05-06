@@ -12,6 +12,15 @@
         android:theme="@style/Theme.GoGoApp"
         tools:targetApi="31">
         <activity
+            android:name=".ViewSingleJobDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewJobListDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewJobDActivity"
+            android:exported="false" />
+        <activity
             android:name=".edit_todo"
             android:exported="false" />
         <activity
