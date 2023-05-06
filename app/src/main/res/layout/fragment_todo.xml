@@ -5,26 +5,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Todo">
 
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Add Todo"
-        android:id="@+id/todo_insert_button"
-        app:cornerRadius="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Todo List"
-        android:id="@+id/todo_list_button"
-        app:cornerRadius="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="120dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:id="@+id/toolbarRl"
+            android:background="@drawable/shape_toolbar01">
+
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/iconIv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logo3d"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iconIv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Manage To-Do"
+                android:textColor="@color/vividBlue"
+                android:textSize="28sp"/>
+
+
+
+        </RelativeLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Todo"
+            android:id="@+id/todo_insert_button"
+
+            app:cornerRadius="10dp"
+            android:padding="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="250dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todo List"
+            android:padding="16dp"
+            android:id="@+id/todo_list_button"
+            app:cornerRadius="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="310dp"/>
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+
 
 </FrameLayout>

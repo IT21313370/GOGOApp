@@ -23,7 +23,7 @@ class AddJob : Fragment() {
         val button02 = view.findViewById<Button>(R.id.deleteJob)
         val button03 = view.findViewById<Button>(R.id.viewJob)
         button.setOnClickListener{
-            val intent = Intent(activity, AddNewJobActivity::class.java)
+            val intent = Intent(activity, AddNewJobDActivity::class.java)
             startActivity(intent)
         }
         button01.setOnClickListener {
@@ -35,7 +35,7 @@ class AddJob : Fragment() {
             startActivity(intent)
         }
         button03.setOnClickListener {
-            val intent = Intent(activity, ViewJobActivity::class.java)
+            val intent = Intent(activity, ViewJobListDActivity::class.java)
             startActivity(intent)
         }
         return view
