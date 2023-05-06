@@ -7,15 +7,15 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:padding="5dp"
-        android:text="My Vacancy List"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        android:layout_height="53dp"
         android:layout_marginTop="50dp"
+        android:padding="5dp"
+        android:text="Job Vacancies"
         android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
 
-        android:textColor="@color/grey"/>
+        android:textStyle="bold" />
 
 
 
@@ -24,19 +24,21 @@
         android:layout_height="56dp"
         android:id="@+id/add_new_vacancy"
         android:background="@drawable/baseline_add_circle_24"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="200dp"
         android:layout_gravity="bottom|end" />
 
+
+
     <Button
+        android:id="@+id/updateVacancy"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:id="@+id/updateVacancy"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="300dp"
         android:background="@drawable/baseline_update_24"
-        android:padding="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="80dp"
-        android:layout_gravity="bottom|end" />
+        android:padding="16dp" />
 
     <Button
         android:layout_width="56dp"
@@ -44,8 +46,8 @@
         android:id="@+id/deleteVacancy"
         android:background="@drawable/baseline_delete_24"
         android:padding="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="400dp"
         android:layout_gravity="bottom|end" />
 
     <Button
@@ -54,8 +56,9 @@
         android:id="@+id/viewVacancy"
         android:background="@drawable/baseline_preview_24"
         android:padding="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="500dp"
         android:layout_gravity="bottom|end" />
+
 
 </FrameLayout>
