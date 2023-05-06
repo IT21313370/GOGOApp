@@ -7,24 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".Todo">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Add Todo"
-        android:id="@+id/todo_insert_button"
-        app:cornerRadius="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"/>
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:text="Add Todo"
+      android:id="@+id/todo_insert_button"
+      app:cornerRadius="30dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginTop="10dp"
+      />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Todo List"
-        android:id="@+id/todo_list_button"
-        app:cornerRadius="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="120dp"/>
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:text="Todo List"
+      android:id="@+id/todo_list_button"
+      app:cornerRadius="30dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginTop="120dp"/>
 
 </FrameLayout>

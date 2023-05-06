@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
@@ -57,13 +58,14 @@ class todoAdapter(private val todoList: ArrayList<TodoClass>) : RecyclerView.Ada
         holder.delete.setOnClickListener(View.OnClickListener {
             val builder = AlertDialog.Builder(holder.itemView.getContext())
             builder.setTitle("Delete Todo")
-            builder.setMessage("Delete...?")
+            builder.setMessage("Do you need to delete yor Todo Task?")
             builder.setPositiveButton(
                 "Yes"
             ) { dialogInterface, i ->
                 FirebaseDatabase.getInstance().reference.child("todo")
                     .child(todo[position].id.toString()).removeValue()
                 todoList.clear()
+                Toast.makeText(holder.itemView.getContext(), "Task Deleted successfully", Toast.LENGTH_SHORT).show()
             }
             builder.setNegativeButton(
                 "No"
