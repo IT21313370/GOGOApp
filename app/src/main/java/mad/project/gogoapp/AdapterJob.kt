@@ -88,8 +88,9 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
                 .setMessage("Are you sure you want to edit this Job")
                 .setPositiveButton("Confirm"){a, d->
                     Toast.makeText(context, "Redirect to update Page...", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(context, UpdateJobDActivity::class.java)
-                    context.startActivity(intent)
+//                    val intent = Intent(context, UpdateJobDActivity::class.java)
+//                    context.startActivity(intent)
+                    editJob(model, holder)
                 }
                 .setNegativeButton("Cancel"){a, d->
                     a.dismiss()
@@ -99,10 +100,90 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
 
     }
 
-    private fun editJob(model: ModelJob, holder: AdapterJob.HolderJob) {
+//    private fun editJob(model: ModelJob, holder: AdapterJob.HolderJob) {
+//        val ref = FirebaseDatabase.getInstance().getReference("Job Data")
+//        val id = model.id
+//        val jobMap = hashMapOf<String, Any>(
+//            "job" to "Updated Job Title",
+//            "location" to "NewLocation"
+//        )
+//        ref.child(id)
+//            .updateChildren(jobMap)
+//            .addOnSuccessListener {
+//                Toast.makeText(context, "Job updated successfully", Toast.LENGTH_SHORT).show()
+//            }
+//            .addOnFailureListener { e->
+//                Toast.makeText(context, "Unable to update job due to ${e.message}", Toast.LENGTH_SHORT).show()
+//            }
+//
+//
+//    }
+
+
+    private fun editJob(model: ModelJob, holder: AdapterJob.HolderJob){
+        //create alert dialog box
+        val builder = AlertDialog.Builder(context)
+//        builder.setTitle("Update Job Info")
+
+        //inflate custom layout for dialog box
+        val inflater = LayoutInflater.from(context)
+        val view = inflater.inflate(R.layout.dialog_edit_job, null)
+
+        //set existing job details as default values
+        view.findViewById<EditText>(R.id.jobEt).setText(model.job)
+        view.findViewById<EditText>(R.id.locationEt).setText(model.location)
+        view.findViewById<EditText>(R.id.fNameEt).setText(model.fName)
+        view.findViewById<EditText>(R.id.lNameEt).setText(model.lName)
+        view.findViewById<EditText>(R.id.feeEt).setText(model.fee)
+        view.findViewById<EditText>(R.id.actHrsEt).setText(model.actHrs)
+        view.findViewById<EditText>(R.id.descriptionEt).setText(model.description)
+
+        //click listener for update button
+        builder.setPositiveButton("Update"){dialog,_->
+            //get updated details from the input fields
+            val newJobTitle = view.findViewById<EditText>(R.id.jobEt).text.toString().trim()
+            val newJobLocation = view.findViewById<EditText>(R.id.locationEt).text.toString().trim()
+            val newFirstName = view.findViewById<EditText>(R.id.fNameEt).text.toString().trim()
+            val newLastName = view.findViewById<EditText>(R.id.lNameEt).text.toString().trim()
+            val newFee = view.findViewById<EditText>(R.id.feeEt).text.toString().trim()
+            val newActHrs = view.findViewById<EditText>(R.id.actHrsEt).text.toString().trim()
+            val newDescription = view.findViewById<EditText>(R.id.descriptionEt).text.toString().trim()
+
+            //update the job details in the firebase database
+            val ref = FirebaseDatabase.getInstance().getReference("Job Data")
+            val id = model.id
+            val jobMap = hashMapOf<String,Any>(
+                "job" to newJobTitle,
+                "location" to newJobLocation,
+                "fName" to newFirstName,
+                "lName" to newLastName,
+                "fee" to newFee,
+                "actHrs" to newActHrs,
+                "description" to newDescription
+            )
+            ref.child(id)
+                .updateChildren(jobMap)
+                .addOnSuccessListener {
+                    Toast.makeText(context,"Job updated Successfully",Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener{e->
+                    Toast.makeText(context,"Unable to update due to ${e.message}",Toast.LENGTH_SHORT).show()
+                }
+            dialog.dismiss()
+        }
+
+        //set a click listener for cancel button
+        builder.setNegativeButton("Cancel"){dialog,_->
+            dialog.dismiss()
+        }
+
+        //set the layout for dialog
+        builder.setView(view)
+
+        //show the dialog
+        builder.show()
 
     }
-
 
     private fun deleteJob(model: ModelJob, holder: HolderJob) {
         //get id of category to delete

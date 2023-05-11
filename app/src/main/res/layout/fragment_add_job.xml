@@ -10,19 +10,47 @@
     android:layout_height="match_parent">
 
 
-
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:padding="5dp"
-        android:text="My Job List"
-        android:id="@+id/jobPg_title"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:textAlignment="center"
-        android:textColor="@color/grey"/>
+        android:layout_height="250dp"
+        android:id="@+id/toolbarRl"
+        android:background="@drawable/shape_toolbar01">
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/iconIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/logo3d"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Manage My jobs"
+            android:textColor="@color/vividBlue"
+            android:textSize="28sp"/>
+
+    </RelativeLayout>
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:text="My Job List"-->
+<!--        android:id="@+id/jobPg_title"-->
+<!--        android:textSize="14sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/grey"/>-->
 
 
 
@@ -36,42 +64,22 @@
         android:id="@+id/add_new_job"
         android:background="@drawable/shape_button01"
         android:layout_marginEnd="10dp"
-        android:layout_below="@id/updateJob" />
+        android:layout_below="@+id/viewJob" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:text="Update Jobs"
-        android:id="@+id/updateJob"
-        android:background="@drawable/shape_button01"
-        android:padding="16dp"
-        android:layout_below="@id/deleteJob"
-        android:layout_marginEnd="10dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="Delete jobs"
-        android:id="@+id/deleteJob"
-        android:layout_below="@+id/viewJob"
-        android:background="@drawable/shape_button01"
-        android:padding="16dp" />
+
+
 
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="260dp"
         android:text="View Job List"
         android:id="@+id/viewJob"
         android:background="@drawable/shape_button01"
-        android:layout_below="@+id/jobPg_title"
+
         android:padding="16dp"
         android:layout_marginEnd="10dp" />
 

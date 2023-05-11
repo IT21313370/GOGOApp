@@ -19,21 +19,21 @@ class AddJob : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_add_job, container, false)
         val button = view.findViewById<Button>(R.id.add_new_job)
-        val button01 = view.findViewById<Button>(R.id.updateJob)
-        val button02 = view.findViewById<Button>(R.id.deleteJob)
+//        val button01 = view.findViewById<Button>(R.id.updateJob)
+//        val button02 = view.findViewById<Button>(R.id.deleteJob)
         val button03 = view.findViewById<Button>(R.id.viewJob)
         button.setOnClickListener{
             val intent = Intent(activity, AddNewJobDActivity::class.java)
             startActivity(intent)
         }
-        button01.setOnClickListener {
-            val intent = Intent(activity, UpdateJobDActivity::class.java)
-            startActivity(intent)
-        }
-        button02.setOnClickListener {
-            val intent = Intent(activity, DeleteJobActivity::class.java)
-            startActivity(intent)
-        }
+//        button01.setOnClickListener {
+//            val intent = Intent(activity, UpdateJobDActivity::class.java)
+//            startActivity(intent)
+//        }
+//        button02.setOnClickListener {
+//            val intent = Intent(activity, DeleteJobActivity::class.java)
+//            startActivity(intent)
+//        }
         button03.setOnClickListener {
             val intent = Intent(activity, ViewJobListDActivity::class.java)
             startActivity(intent)
