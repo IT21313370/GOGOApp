@@ -87,7 +87,7 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
             builder.setTitle("Update Job Info")
                 .setMessage("Are you sure you want to edit this Job")
                 .setPositiveButton("Confirm"){a, d->
-                    Toast.makeText(context, "Redirect to update Page...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Loading update View...", Toast.LENGTH_SHORT).show()
 //                    val intent = Intent(context, UpdateJobDActivity::class.java)
 //                    context.startActivity(intent)
                     editJob(model, holder)

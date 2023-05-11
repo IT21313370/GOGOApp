@@ -79,7 +79,6 @@
         android:text="View Job List"
         android:id="@+id/viewJob"
         android:background="@drawable/shape_button01"
-
         android:padding="16dp"
         android:layout_marginEnd="10dp" />
 
