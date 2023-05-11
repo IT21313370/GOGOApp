@@ -118,9 +118,9 @@ private fun showNotification(){
 
     notificationBuilder.setContentIntent(mainPendingIntent)
 
-    notificationBuilder.addAction(R.drawable.ic_call_notification,"Call",callPendingIntent)
+    notificationBuilder.addAction(R.drawable.baseline_call_24,"Call",callPendingIntent)
 
-    notificationBuilder.addAction(R.drawable.ic_msg_notification,"Message",messagePendingIntent)
+    notificationBuilder.addAction(R.drawable.baseline_message_24,"Message",messagePendingIntent)
 
 
     val notificationManagerCompat = NotificationManagerCompat.from(this)
