@@ -59,6 +59,8 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
         binding = ActivityViewSingleJobDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         showNotificationBtn = findViewById(R.id.showNotificationBtn)
 
         showNotificationBtn.setOnClickListener{
@@ -174,6 +176,10 @@ private fun showNotification(){
                         commentArrayList.add(model!!)
                     }
 
+                    // update the total comment count
+                    val totalComments = commentArrayList.size
+                    binding.commentCountTv.text = "Comments ($totalComments)"
+
 //                    setup adapter
                     adapterComment = AdapterComment(this@ViewSingleJobDetailsActivity,commentArrayList)
 //                    setup adapter to recycler view
@@ -187,6 +193,37 @@ private fun showNotification(){
                 }
             })
     }
+
+//    rating count
+private fun loadRatingsCount() {
+    val ref = FirebaseDatabase.getInstance().getReference("Job Data")
+    ref.child(jobId).child("Ratings")
+        .addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var count = 0
+                var totalRating = 0.0
+                for (ds in snapshot.children) {
+                    val rating = ds.getValue(Double::class.java)
+                    if (rating != null) {
+                        count++
+                        totalRating += rating
+                    }
+                }
+                val averageRating = if (count > 0) totalRating / count else 0.0
+                val ratingText = "Ratings: $count, Average rating: %.2f".format(averageRating)
+                binding.ratingsCountTv.text = ratingText
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(
+                    this@ViewSingleJobDetailsActivity,
+                    "" + error.message,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+}
+
 
     private fun loadJobDetails() {
         val ref = FirebaseDatabase.getInstance().getReference("Job Data")
