@@ -5,7 +5,7 @@
     app:contentPadding="10dp"
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="8dp"
-    app:cardElevation="0dp"
+    app:cardElevation="8dp"
     app:cardBackgroundColor="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
