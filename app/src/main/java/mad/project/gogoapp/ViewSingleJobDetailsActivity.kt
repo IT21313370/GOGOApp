@@ -11,12 +11,13 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
 import mad.project.gogoapp.databinding.ActivityViewSingleJobDetailsBinding
 
 import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.EditText
+import android.widget.RatingBar
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
@@ -61,7 +62,7 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
 
 
 
-        showNotificationBtn = findViewById(R.id.showNotificationBtn)
+        showNotificationBtn = binding.showNotificationBtn
 
         showNotificationBtn.setOnClickListener{
             showNotification()
@@ -69,7 +70,7 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-//        get job id from intent
+        // get job id from intent
         jobId = intent.getStringExtra("id")!!
 
         loadJobDetails()
@@ -78,10 +79,19 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait...")
         progressDialog.setCanceledOnTouchOutside(false)
-
     }
 
-//    notification
+
+
+
+    private fun updateCommentData(jobId: String, comment: String, rating: String){
+        val dbRef = FirebaseDatabase.getInstance().getReference("Job Data").child(jobId)
+        val commentData = ModelComment(jobId, comment,rating)
+        dbRef.setValue(commentData)
+    }
+
+
+    //    notification
 private fun showNotification(){
     createNotificationChannel()
 
@@ -195,34 +205,7 @@ private fun showNotification(){
     }
 
 //    rating count
-private fun loadRatingsCount() {
-    val ref = FirebaseDatabase.getInstance().getReference("Job Data")
-    ref.child(jobId).child("Ratings")
-        .addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var count = 0
-                var totalRating = 0.0
-                for (ds in snapshot.children) {
-                    val rating = ds.getValue(Double::class.java)
-                    if (rating != null) {
-                        count++
-                        totalRating += rating
-                    }
-                }
-                val averageRating = if (count > 0) totalRating / count else 0.0
-                val ratingText = "Ratings: $count, Average rating: %.2f".format(averageRating)
-                binding.ratingsCountTv.text = ratingText
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(
-                    this@ViewSingleJobDetailsActivity,
-                    "" + error.message,
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
-}
 
 
     private fun loadJobDetails() {
