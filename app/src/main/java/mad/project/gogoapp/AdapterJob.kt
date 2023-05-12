@@ -100,24 +100,7 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
 
     }
 
-//    private fun editJob(model: ModelJob, holder: AdapterJob.HolderJob) {
-//        val ref = FirebaseDatabase.getInstance().getReference("Job Data")
-//        val id = model.id
-//        val jobMap = hashMapOf<String, Any>(
-//            "job" to "Updated Job Title",
-//            "location" to "NewLocation"
-//        )
-//        ref.child(id)
-//            .updateChildren(jobMap)
-//            .addOnSuccessListener {
-//                Toast.makeText(context, "Job updated successfully", Toast.LENGTH_SHORT).show()
-//            }
-//            .addOnFailureListener { e->
-//                Toast.makeText(context, "Unable to update job due to ${e.message}", Toast.LENGTH_SHORT).show()
-//            }
-//
-//
-//    }
+
 
 
     private fun editJob(model: ModelJob, holder: AdapterJob.HolderJob){
@@ -208,7 +191,35 @@ class AdapterJob :androidx.recyclerview.widget.RecyclerView.Adapter<AdapterJob.H
     }
 
     override fun getFilter(): Filter {
-        TODO("Not yet implemented")
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val searchText = constraint.toString().toLowerCase()
+                val filterResults = FilterResults()
+
+                if (searchText.isEmpty()) {
+                    filterResults.values = filterList
+                    filterResults.count = filterList.size
+                } else {
+                    val filteredList = ArrayList<ModelJob>()
+
+                    for (modelJob in filterList) {
+                        if (modelJob.job.toLowerCase().contains(searchText)) {
+                            filteredList.add(modelJob)
+                        }
+                    }
+
+                    filterResults.values = filteredList
+                    filterResults.count = filteredList.size
+                }
+
+                return filterResults
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                jobArrayList = results?.values as ArrayList<ModelJob>
+                notifyDataSetChanged()
+            }
+        }
     }
 
 }
