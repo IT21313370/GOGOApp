@@ -1,33 +1,24 @@
 package mad.project.gogoapp
 
-import android.Manifest
-import android.app.*
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
+import android.app.AlertDialog
+import android.app.Dialog
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.ktx.Firebase
 import mad.project.gogoapp.databinding.ActivityViewSingleJobDetailsBinding
 
 import android.text.format.DateFormat
 import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RatingBar
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import com.example.simplenotification.NotificationActivity
 import com.google.firebase.auth.FirebaseAuth
 import mad.project.gogoapp.adapter.AdapterComment
 import mad.project.gogoapp.databinding.DialogCommentAddBinding
 import mad.project.gogoapp.models.ModelComment
-import java.text.SimpleDateFormat
 
 import java.util.*
 import kotlin.collections.ArrayList
@@ -35,17 +26,13 @@ import kotlin.collections.HashMap
 
 class ViewSingleJobDetailsActivity : AppCompatActivity() {
 
-    private  lateinit var showNotificationBtn: Button
-
-
-
-//    view binding
+    //    view binding
     private lateinit var binding:ActivityViewSingleJobDetailsBinding
 
-//Array lis to hold comment
+    //Array lis to hold comment
     private lateinit var commentArrayList: ArrayList<ModelComment>
 
-//    adapter to be set recyclerview
+    //    adapter to be set recyclerview
     private lateinit var adapterComment: AdapterComment
 
     private var jobId = ""
@@ -60,17 +47,9 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
         binding = ActivityViewSingleJobDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-        showNotificationBtn = binding.showNotificationBtn
-
-        showNotificationBtn.setOnClickListener{
-            showNotification()
-        }
-
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // get job id from intent
+//        get job id from intent
         jobId = intent.getStringExtra("id")!!
 
         loadJobDetails()
@@ -79,92 +58,13 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait...")
         progressDialog.setCanceledOnTouchOutside(false)
-    }
 
-
-
-
-    }
-
-
-    //    notification
-private fun showNotification(){
-    createNotificationChannel()
-
-    val date = Date()
-    val notificationId = SimpleDateFormat("ddHHmmss",Locale.US).format(date).toInt()
-
-    val  mainIntent = Intent(this,NotificationActivity::class.java)
-
-    mainIntent.putExtra("KEY_NAME","GOGO")
-    mainIntent.putExtra("KEY_TYPE","Notification Content")
-    mainIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-    val mainPendingIntent = PendingIntent.getActivity(this,1,mainIntent, PendingIntent.FLAG_IMMUTABLE)
-
-    val callIntent = Intent(this,NotificationActivity::class.java)
-    callIntent.putExtra("KEY_NAME","GOGO")
-    callIntent.putExtra("KEY_TYPE","Call Button Clicked")
-    val callPendingIntent = PendingIntent.getActivity(this,2,callIntent, PendingIntent.FLAG_IMMUTABLE)
-
-    val messageIntent = Intent(this,NotificationActivity::class.java)
-    messageIntent.putExtra("KEY_NAME","GOGO")
-    messageIntent.putExtra("KEY_TYPE","Message Button Clicked")
-    val messagePendingIntent = PendingIntent.getActivity(this,3,messageIntent, PendingIntent.FLAG_IMMUTABLE)
-
-
-
-    val notificationBuilder = NotificationCompat.Builder(this,"$CHANNEL_ID")
-
-    notificationBuilder.setSmallIcon(R.drawable.logo3d)
-
-    notificationBuilder.setContentTitle("New Job Request")
-
-    notificationBuilder.setContentText("This is for your job skill accept or decline that.")
-
-    notificationBuilder.priority = NotificationCompat.PRIORITY_HIGH
-    notificationBuilder.setAutoCancel(true)
-
-    notificationBuilder.setContentIntent(mainPendingIntent)
-
-    notificationBuilder.addAction(R.drawable.baseline_call_24,"Call",callPendingIntent)
-
-    notificationBuilder.addAction(R.drawable.baseline_message_24,"Message",messagePendingIntent)
-
-
-    val notificationManagerCompat = NotificationManagerCompat.from(this)
-
-    if (ActivityCompat.checkSelfPermission(
-            this,
-            Manifest.permission.POST_NOTIFICATIONS
-        ) != PackageManager.PERMISSION_GRANTED
-    ) {
-        // TODO: Consider calling
-        //    ActivityCompat#requestPermissions
-        // here to request the missing permissions, and then overriding
-        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-        //                                          int[] grantResults)
-        // to handle the case where the user grants the permission. See the documentation
-        // for ActivityCompat#requestPermissions for more details.
-        return
-    }
-    notificationManagerCompat.notify(notificationId, notificationBuilder.build())
-
-}
-
-    private fun createNotificationChannel(){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val name:CharSequence = "MyNotification"
-            val description = "My notification channel description"
-
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val notificationChannel = NotificationChannel(CHANNEL_ID,name,importance)
-            notificationChannel.description=description
-            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-            notificationManager.createNotificationChannel(notificationChannel)
-
+        //handle click, go back
+        binding.backBtn.setOnClickListener {
+            onBackPressed()
         }
+
     }
-//    .........
 
     private fun showComments() {
 //        init array list
@@ -182,10 +82,6 @@ private fun showNotification(){
                         commentArrayList.add(model!!)
                     }
 
-                    // update the total comment count
-                    val totalComments = commentArrayList.size
-                    binding.commentCountTv.text = "Comments ($totalComments)"
-
 //                    setup adapter
                     adapterComment = AdapterComment(this@ViewSingleJobDetailsActivity,commentArrayList)
 //                    setup adapter to recycler view
@@ -199,10 +95,6 @@ private fun showNotification(){
                 }
             })
     }
-
-//    rating count
-
-
 
     private fun loadJobDetails() {
         val ref = FirebaseDatabase.getInstance().getReference("Job Data")
@@ -370,7 +262,6 @@ private fun showNotification(){
     }
 
     companion object {
-        private const val CHANNEL_ID = "channel01"
         fun formatTimeStamp(timestamp: Long): String {
             val cal = Calendar.getInstance(Locale.ENGLISH)
             cal.timeInMillis = timestamp
@@ -382,6 +273,4 @@ private fun showNotification(){
 
 
 
-
 }
-
