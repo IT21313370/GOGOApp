@@ -56,6 +56,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    //testing
+
+    testImplementation "org.robolectric:robolectric:4.10.2"
+
     implementation 'com.orhanobut:dialogplus:1.11@aar'
 
 
