@@ -59,6 +59,11 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
         progressDialog.setTitle("Please wait...")
         progressDialog.setCanceledOnTouchOutside(false)
 
+        //handle click, go back
+        binding.backBtn.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun showComments() {
