@@ -5,7 +5,7 @@
     app:contentPadding="10dp"
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="8dp"
-    app:cardElevation="0dp"
+    app:cardElevation="8dp"
     app:cardBackgroundColor="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -30,16 +31,18 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/vividBlue"
             android:background="@drawable/shape_button02"
             android:id="@+id/editBtn"
-            android:src="@drawable/baseline_edit_24"/>
+            android:src="@drawable/baseline_edit_24_white"/>
 
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:backgroundTint="@color/red"
             android:background="@drawable/shape_button02"
             android:id="@+id/deleteBtn"
-            android:src="@drawable/baseline_delete_outline_24"/>
+            android:src="@drawable/baseline_delete_outline_24_white"/>
 
 
 

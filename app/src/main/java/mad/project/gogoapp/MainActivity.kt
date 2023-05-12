@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.community -> replaceFragment(Community())
-                R.id.notification -> replaceFragment(Notification())
+
                 R.id.favorites -> replaceFragment(Favourites())
                 R.id.todo -> replaceFragment(Todo())
                 R.id.addBox -> replaceFragment(AddBox())

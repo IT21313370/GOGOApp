@@ -84,10 +84,6 @@ class ViewSingleJobDetailsActivity : AppCompatActivity() {
 
 
 
-    private fun updateCommentData(jobId: String, comment: String, rating: String){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Job Data").child(jobId)
-        val commentData = ModelComment(jobId, comment,rating)
-        dbRef.setValue(commentData)
     }
 
 

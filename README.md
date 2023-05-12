@@ -1,6 +1,18 @@
 # GOGOApp
 Second year mobile application development (MAD) group project of Sri Lanka institute of information technology (SLIIT)
 
+SignIn/SignUp - Manage My Jobs - Search 
+
+User can register into the application giving relevant data, if there are any conflicts in the data that provided by the user there will be erros.
+only correct data can be added to the fields because of the validations.
+If user forgot password, new password can be sets up using email service
+
+Job Managing Function gives the users to add new jobs to the databae and view all the jobs which added by the users of the application.
+User has the facility to create jobsn view jobs, edit job details and delete jobs according to the preference.
+If anyone looking for a releveant job using the application, it can be done by scrolling it or using the search bar on the top of the view.
+Search bar make the searching task easier when looking for job seekers.
+
+
 Task List - Search - payment calculation
 
 

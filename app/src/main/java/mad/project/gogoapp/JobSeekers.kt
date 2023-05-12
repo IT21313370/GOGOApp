@@ -22,7 +22,7 @@ class JobSeekers : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_job_seekers, container, false)
         val button001 = view.findViewById<Button>(R.id.jobSeekerListBtn)
         button001.setOnClickListener{
-            val intent = Intent(activity, ViewPublicJobListActivity::class.java)
+            val intent = Intent(activity, ViewJobListDActivity::class.java)
             startActivity(intent)
         }
         return view
