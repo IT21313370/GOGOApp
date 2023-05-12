@@ -1,12 +1,12 @@
 package mad.project.gogoapp.adapter
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.compose.material.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import mad.project.gogoapp.R
 import mad.project.gogoapp.ViewSingleJobDetailsActivity
 import mad.project.gogoapp.databinding.DialogCommentAddBinding
 import mad.project.gogoapp.databinding.RowCommentBinding
@@ -24,6 +25,7 @@ import mad.project.gogoapp.models.ModelComment
 class AdapterComment:RecyclerView.Adapter<AdapterComment.HolderComment> {
 
     val context: Context
+
 
 
     //Array list to hold comment
@@ -56,6 +58,8 @@ class AdapterComment:RecyclerView.Adapter<AdapterComment.HolderComment> {
 
     override fun onBindViewHolder(holder: HolderComment, position: Int) {
 
+
+
 //            get data,set data,handle click etc...
 
         val model = commentArrayList[position]
@@ -86,7 +90,72 @@ class AdapterComment:RecyclerView.Adapter<AdapterComment.HolderComment> {
             }
 
         }
+
+//        set comment btn
+        holder.btnUpdateCmnt.setOnClickListener{
+
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Update Comment")
+                .setMessage("Are you sure you want to edit this comment")
+                .setPositiveButton("Confirm"){a,d->
+                    Toast.makeText(context,"Loading...",Toast.LENGTH_SHORT).show()
+                    editComment(model,holder)
+                }
+                .setNegativeButton("Cancel"){a,d->
+                    a.dismiss()
+                }
+                .show()
+        }
     }
+
+    @SuppressLint("MissingInflatedId")
+    private fun editComment(model: ModelComment, holder: AdapterComment.HolderComment) {
+        val builder = AlertDialog.Builder(holder.itemView.context)
+
+        // Inflate the layout for the EditText view
+        val inflater = LayoutInflater.from(holder.itemView.context)
+        val view = inflater.inflate(R.layout.update_dialog, null)
+
+        // Set the text of the EditText to the current comment
+        view.findViewById<EditText>(R.id.commentEt).setText(model.comment)
+
+
+
+
+
+
+        builder.setPositiveButton("Update") { dialog, _ ->
+            // Get the new comment from the EditText view
+            val newComment = view.findViewById<EditText>(R.id.commentEt).text.toString().trim()
+
+
+            // Get a reference to the Firebase database
+            val ref = FirebaseDatabase.getInstance().getReference("Job Data")
+
+            // Update the comment in the database
+            ref.child(model.jobId).child("Comments").child(model.timestamp)
+                .updateChildren(mapOf("comment" to newComment))
+                .addOnSuccessListener {
+                    Toast.makeText(holder.itemView.context, "Comment updated successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(holder.itemView.context, "Unable to update comment: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("Cancel") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.setView(view)
+
+        // Show the AlertDialog
+        builder.show()
+    }
+
+
 
     private fun deleteCommentDialog(model: ModelComment, holder: HolderComment) {
 
@@ -160,6 +229,7 @@ class AdapterComment:RecyclerView.Adapter<AdapterComment.HolderComment> {
         val dateTv = binding.dateTv
         val ratingTv = binding.ratingTv
         val commentTv = binding.commentTv
+        var btnUpdateCmnt: Button = binding.btnUpdateCmnt
 
 
     }

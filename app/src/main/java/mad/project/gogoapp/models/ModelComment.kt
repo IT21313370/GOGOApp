@@ -11,7 +11,11 @@ class ModelComment {
     var uid =""
 
 //    empty constructor,required by firebase
-
+data class EditCommentModel(
+    val id: String, // the ID of the comment being edited
+    val jobId: String, // the ID of the job associated with the comment
+    val comment: String // the new comment text
+)
     constructor()
 
 //    param constructor
@@ -30,6 +34,8 @@ class ModelComment {
         this.rating = rating
         this.uid = uid
     }
+
+    constructor(jobId: String, comment: String, rating: String)
 
 
 }
